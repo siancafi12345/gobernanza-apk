@@ -1,0 +1,14 @@
+{
+  "name": "gobernanza",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/gobernanzaApi/",
+      "proxyUrl": "http://gobernanza.linktic.com/"
+    }
+  ],
+  "integrations": {
+    "cordova": {}
+  }
+}

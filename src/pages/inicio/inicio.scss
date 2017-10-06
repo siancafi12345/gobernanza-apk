@@ -1,0 +1,53 @@
+page-inicio {
+
+ion-slides{
+  height:auto;
+}
+
+ion-navbar{
+  background-color: white;
+}
+
+}
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+.masters {
+  background-color: #f1f1f1;
+}
+.card-md{
+
+      box-shadow: 0 2px 2px 0 #7BB43A, 0 3px 1px -2px #7BB43A, 0 1px 5px 0 #7BB43A;
+}
+.mod-color-line-top .color-1 {
+    width: 11.99%;
+    float: left;
+    height: 8px;
+    background-color: #47B14B;
+}
+.mod-color-line-top{
+
+display: block !important
+}
+}

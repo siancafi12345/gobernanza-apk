@@ -1,0 +1,70 @@
+<!--
+  Generated template for the InicioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header> 
+
+
+  <ion-navbar color="">
+
+  <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button> 
+  
+  <img src="assets/img/logos/logo.png" alt="img_1">
+  </ion-navbar> 
+</ion-header> 
+<ion-content class="masters"> 
+
+<!-- <ion-slides autoplay="5000" loop="true" speed="1000">
+  <ion-slide>
+  </ion-slide>
+  <ion-slide> 
+  <img src="/assets/img/slide/img_2.jpg" alt="img_2">
+  </ion-slide>
+  <ion-slide> 
+  <img src="/assets/img/slide/img_3.jpg" alt="img_3">
+  </ion-slide>
+</ion-slides> 
+jjj -->
+ <ion-slides autoplay="5000" loop="true" speed="1000">
+
+  <ion-slide > 
+  <img src="assets/img/header.jpg"  style="height:128px" alt="img_1">
+  </ion-slide> 
+  <ion-slide > 
+  <img src="assets/img/header2.jpg" style="height:128px" alt="img_2">
+  </ion-slide> 
+  <ion-slide > 
+  <img src="assets/img/header3.jpg" style="height:128px" alt="img_3">
+  </ion-slide>
+ 
+
+</ion-slides>
+ <ion-fab right bottom>
+    <button ion-fab color="primary"><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list side="top"> 
+      <button ion-fab style="background-color:#dd5144"><ion-icon color='light' name="logo-googleplus"></ion-icon></button>
+      <button ion-fab><ion-icon style='color:blue;' name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon style="color:#1c9ded" name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab> 
+  <ion-grid class="card-background-page">
+    <ion-row>
+      <ion-col  col-6 *ngFor="let institucion of instituciones; let i=index" > 
+        <ion-card style="height:100px;" *ngIf="i<number">
+          <img style="height:100%" src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
+          <div class="card-title" style="font-size: 1em"> {{institucion.name}} </div>
+          <div class="card-subtitle"><button ion-button color="light" round outline  (click)="institutions(institucion.id)"  >ver más</button></div>
+        </ion-card>
+      </ion-col> 
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+
+  </ion-content>

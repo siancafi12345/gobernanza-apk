@@ -1,0 +1,85 @@
+<!-- Generated template for the PerfilesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+   <ion-navbar color="">
+  <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button> 
+  <img src="assets/img/logos/logo.png" alt="img_1">
+  </ion-navbar>
+    <ion-title>Instituciones</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page"> 
+
+	<ion-grid>
+		<ion-row>
+			<ion-col offset-3 col-6 offset-3 >
+				<ion-input type="text" [(ngModel)]="searchTerm" (ngModelChange) = "filterItems()" placeholder="Buscar instituciones"></ion-input> 
+			</ion-col> 
+		</ion-row>
+
+	</ion-grid>
+	
+	<ion-grid>
+		<ion-row>
+			<ion-col  col-12>
+				<ion-item>
+
+					<ion-label>Departamento</ion-label>
+					<ion-select #d [(ngModel)]="id_departament" (ionChange)="select_departamento()">
+						<ion-option  *ngFor="let departamento of departamentos"
+						 value="{{departamento.id}}">{{departamento.title}}</ion-option>
+					</ion-select>
+				</ion-item>
+			</ion-col> 
+			<ion-col  col-12>
+				<ion-item> 
+					<ion-label>Tipo</ion-label>
+					<ion-select [(ngModel)]="tipo" (ionChange) = "select_departamento()">
+						<ion-option value="privado">Privado</ion-option>
+						<ion-option value="publico">Publico</ion-option>
+						<ion-option value="mixta">Mixta</ion-option>
+						<ion-option value="otros">Otros</ion-option>
+					</ion-select>
+				</ion-item>
+			</ion-col> 
+		</ion-row>
+
+	</ion-grid>
+<!-- List card -->
+
+<ion-spinner *ngIf="isValid" > </ion-spinner>
+ <ion-list>
+ <h3 style="color:#ccc; text-align: center" *ngIf="instituciones.length == 0">No se encontraron coincidencias</h3>
+
+  <ion-item  *ngFor="let institucion of instituciones; let i=index">
+  	<ion-card *ngIf="i<number">
+
+
+  		<img src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
+  		<div class="card-title"> {{institucion.name}} </div>
+  		<ion-card-content style="text-align: justify;"> 
+				<p><ion-icon name="globe" item-left></ion-icon>{{institucion.departamento}} </p>
+				<p><ion-icon name="pin" item-left></ion-icon>{{institucion.address}} </p>
+				<p><ion-icon name="call" item-left></ion-icon>{{institucion.phone}} </p>
+				<p><ion-icon name="attach" item-left></ion-icon>{{institucion.url}} </p> 
+				<div style="text-align: center "> 
+				<button ion-button  round outline (click)="detailInstitutions(institucion.id)" >ver más</button>
+				</div>
+  		</ion-card-content>
+  	</ion-card>
+  </ion-item>
+</ion-list>
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+</ion-content>
+
+<!--  -->

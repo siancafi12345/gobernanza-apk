@@ -1,0 +1,22 @@
+<ion-menu [content]="NAV"  class="menu-content">			 
+<ion-content class="menu-sidebar">	
+
+<img src="assets/img/menu.jpg" alt="gobernanza" height="150">
+
+<ion-list > 
+<button ion-item class="list-menu" color="" *ngFor="let page of pageInicio" (click)="goToPage(page.component)" menuClose> 
+	<ion-icon name="{{page.icon}}"></ion-icon>	
+	{{page.titulo}}
+</button> 
+
+
+<button ion-item class="list-menu" color="" *ngFor="let page of actoresIterable" (click)="goToListInstituciones(page.id)" menuClose> 
+	<ion-icon name="person"></ion-icon>	
+	{{page.name}}
+</button> 
+
+</ion-list>
+</ion-content>
+
+</ion-menu>
+<ion-nav #NAV [root]="rootPage"></ion-nav>
