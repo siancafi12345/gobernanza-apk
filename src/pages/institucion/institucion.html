@@ -15,7 +15,8 @@
 
 <ion-content  class="card-background-page">
  <ion-card style="top: 10%">
-    <img src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
+    <img *ngIf="institucion.logo != null" src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
+    <img style="height:100%" *ngIf="institucion.logo == null" src="assets/img/NoImage.png"/>
     <div class="card-title"> {{institucion.name}} </div>
     <div class="card-subtitle" style="margin-top: 20px">{{institucion.departamento}}</div>
     <div class="card-subtitle1" style="margin-top: 20px">{{institucion.phone}}</div>

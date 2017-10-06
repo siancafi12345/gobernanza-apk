@@ -63,7 +63,8 @@
   	<ion-card *ngIf="i<number">
 
 
-  		<img src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
+		  <img  *ngIf="info.logo != null" src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
+		  <img  *ngIf="info.logo == null" src="assets/img/NoImage.png"/>
   		<div class="card-title"> {{institucion.name}} </div>
   		<ion-card-content style="text-align: justify;"> 
 				<p><ion-icon name="globe" item-left></ion-icon>{{institucion.departamento}} </p>
