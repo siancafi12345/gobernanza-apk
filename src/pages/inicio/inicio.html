@@ -56,7 +56,7 @@ jjj -->
         <ion-card style="height:100px;" *ngIf="i<number">
           <img style="height:100%" *ngIf="institucion.logo != null" src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
           <img style="height:100%" *ngIf="institucion.logo == null" src="assets/img/NoImage.png"/>
-          <div class="card-title" style="font-size: 1em"> {{institucion.name}} </div>
+          <div class="card-title" style="font-size: 1em;text-shadow: 2px 2px #504848;"> {{institucion.name}} </div>
           <div class="card-subtitle"><button ion-button color="light" round outline  (click)="institutions(institucion.id)"  >ver más</button></div>
         </ion-card>
       </ion-col> 

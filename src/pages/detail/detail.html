@@ -16,19 +16,19 @@
 
 <ion-content padding> 
 	<ion-card>
-
+		<!--detalle institucion-->
 		<img  *ngIf="info.logo == null" src="assets/img/NoImage.png"/>
 		<img  *ngIf="info.logo != null" src="http://gobernanza.linktic.com/{{info.logo}}"/>
 
 		<ion-card-content>
-			<ion-card-title> 
+			<ion-card-title style="text-shadow: 2px 2px #504848;"> 
 				{{info.name}}
 			</ion-card-title>
 			<p style="text-shadow:2px 2px  #504848"><ion-icon name="pin" item-left></ion-icon> {{info.address}}</p>
 			<p style="text-shadow:2px 2px  #504848"><ion-icon name="call" item-left></ion-icon> {{info.phone}}</p> 
 			<p style="text-shadow:2px 2px  #504848"><ion-icon name="attach" item-left></ion-icon> {{info.url}}</p> 
 			<br>
-			<p *ngFor="let pregunta of preguntas">{{pregunta.pregunta}}=
+			<p style="font-weight: bold" *ngFor="let pregunta of preguntas">{{pregunta.pregunta}}:
 			<span >{{pregunta.respuesta}}</span></p> 
 			 
 
