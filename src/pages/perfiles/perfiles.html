@@ -65,12 +65,12 @@
 
 		  <img  *ngIf="info.logo != null" src="http://gobernanza.linktic.com/{{institucion.logo}}"/>
 		  <img  *ngIf="info.logo == null" src="assets/img/NoImage.png"/>
-  		<div class="card-title"> {{institucion.name}} </div>
+  		<div class="card-title" style="text-shadow: 2px 2px #504848;"> {{institucion.name}} </div>
   		<ion-card-content style="text-align: justify;"> 
-				<p><ion-icon name="globe" item-left></ion-icon>{{institucion.departamento}} </p>
-				<p><ion-icon name="pin" item-left></ion-icon>{{institucion.address}} </p>
-				<p><ion-icon name="call" item-left></ion-icon>{{institucion.phone}} </p>
-				<p><ion-icon name="attach" item-left></ion-icon>{{institucion.url}} </p> 
+				<p style="text-shadow: 2px 2px #504848;" ><ion-icon name="globe"   item-left></ion-icon>{{institucion.departamento}} </p>
+				<p style="text-shadow: 2px 2px #504848;"><ion-icon name="pin"   item-left></ion-icon>{{institucion.address}} </p>
+				<p style="text-shadow: 2px 2px #504848;"><ion-icon name="call"  item-left></ion-icon>{{institucion.phone}} </p>
+				<p style="text-shadow: 2px 2px #504848;"><ion-icon name="attach"   item-left></ion-icon>{{institucion.url}} </p> 
 				<div style="text-align: center "> 
 				<button ion-button  round outline (click)="detailInstitutions(institucion.id)" >ver más</button>
 				</div>
